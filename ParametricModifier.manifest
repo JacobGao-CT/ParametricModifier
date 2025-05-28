@@ -5,7 +5,7 @@
 	"description":	{
 		"":	"A tool to easily edit parameters in a parametric model"
 	},
-	"version":	"",
+	"version":	"0.5.0",
 	"runOnStartup":	false,
 	"supportedOS":	"windows|mac",
 	"editEnabled":	true,

@@ -1,0 +1,19 @@
+import adsk.core
+import adsk.fusion
+import adsk.cam
+
+def getCompIfOccurrence(entity):
+    if entity.objectType == 'adsk::fusion::Occurrence':
+        return entity.component
+    return entity
+
+def getUserParameters(comp):
+    params = {}
+    userParams = comp.parentDesign.userParameters  # Get user parameters at design level
+    for param in userParams:
+        if param.createdBy == comp:  # Only grab parameters created in this component
+            params[param.name] = {
+                'value': param.expression,
+                'unit': param.unit
+            }
+    return params
